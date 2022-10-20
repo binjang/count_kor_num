@@ -105,7 +105,7 @@ class KorNumCounter:
         ordinal_dict.update(d)
 
     def __init__(self):
-        self.__init__()
+        pass
 
     def _is_one_char(self, kor_num: str) -> bool:
         if all((char in self.one_char_dict) for char in kor_num):
@@ -175,9 +175,14 @@ class KorNumCounter:
         else:
             raise ValueError("Not a valid Korean number")
 
-        if return_type is "int":
+        if return_type == "int":
             return output
-        elif return_type is "str":
+        elif return_type == "str":
             return str(output)
         else:
             raise ValueError("Return type not supported. Please enter \"int\" or \"str\"")
+
+
+if __name__=="__main__":
+    kornumcounter = KorNumCounter()
+    print(kornumcounter.count_kor_num("스물둘"))
